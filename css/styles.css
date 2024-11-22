@@ -58,11 +58,16 @@ nav ul li{
     margin-top: 10px; 
 }
 
-a{
+.listaHeader a{
     text-decoration: none;
     text-transform: uppercase;
+    color: black;
 }
 
+.form-control{
+    width: 80%;
+    font-size: 20px;
+}
 
 
 
