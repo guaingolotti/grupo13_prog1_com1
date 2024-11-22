@@ -109,3 +109,14 @@ nav ul li{
     font-size: 15px;
     color: red;
 }
+
+
+/*/LOG IN/*/
+
+.login{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
