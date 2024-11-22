@@ -58,6 +58,11 @@ nav ul li{
     margin-top: 10px; 
 }
 
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 
 
 
@@ -77,6 +82,7 @@ nav ul li{
     list-style: none;
     color: white;
 }
+
 
 
 /*/formulario/*/
