@@ -11,13 +11,15 @@ fetch('https://dummyjson.com/recipes')
     })
     .then(function(data){
         console.log(data.recipes);
-        for (let i = 0; i < 10; i ++) {
-            let receta = data.recipes[i]
+        let info = data;
+        for (let index = 0; index < 10; index ++) {
+            let receta = data.recipes[index]
             let estructura = `
             <article class= "recetaDos">
+                <h1> ${receta.name}</h1>
                 <img src="${receta.image}">
-                <p> name: ${receta.name}</p>
                 <p> dificultad: ${receta.difficulty}</p>
+                <a href="./receta.html?id=${receta.id}">Ir al detalle</a>
             </article>`;
             recetas += estructura;
         }
@@ -27,4 +29,52 @@ fetch('https://dummyjson.com/recipes')
         console.log("error:", error)
     })
 
-/*/falta: link para el detalle y boton de "cargar mas" /*/
+
+let formulario = document.querySelector('.formSearch');
+let campoBuscar = document.querySelector ('#buscarReceta');
+let mensajeError = document.querySelector('.invalid-feedback');
+
+campoBuscar.addEventListener('keydown', function(event){
+    if (event.key === 'Enter'){
+
+        event.preventDefault();
+
+        let campoValores = campoBuscar.value.trim();
+
+        if (campoValores === ''){
+            mensajeError.textContent = 'Debes ingresar un nombre de receta';
+            mensajeError.style.display = 'block';
+        } else if (campoValores.length < 3){
+            mensajeError.textContent = 'Debe tener al menos 3 caracteres';
+            mensajeError.style.display = 'block';  
+        } else{
+            mensajeError.style.display = 'none';
+            formulario.submit();
+        }
+    }
+})
+
+let btnBuscar = document.querySelector('.btnBuscar');
+
+btnBuscar.addEventListener('click', function(event){
+
+        event.preventDefault();
+
+        let campoValores = campoBuscar.value.trim();
+
+        if (campoValores === ''){
+            mensajeError.textContent = 'Debes ingresar un nombre de receta';
+            mensajeError.style.display = 'block';
+        } else if (campoValores.length < 3){
+            mensajeError.textContent = 'Debe tener al menos 3 caracteres';
+            mensajeError.style.display = 'block';  
+        } else{
+            mensajeError.style.display = 'none';
+            formulario.submit();
+        }
+})
+
+
+
+/*/Botón "Cargar más" que con cada click agregue 10 recetas más en la home./*/
+

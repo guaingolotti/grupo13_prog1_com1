@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+    <title>Trabajo TI</title>
 </head>
 <body>
     <header>
         <nav>
             <img src="./img/logo.jpg" alt="logo" class="logo">
+
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./categories.html"></a>Categorias</li>
@@ -17,10 +18,31 @@
                 <li><a href="register.html"></a>Registro</li>
             </ul>
         </nav>
+
+
+        <form class="formSearch" action="search-results.html" method="get"></form>
+        <div class="form-uno">
+            <label for="buscarReceta">Ingrese la receta que busca</label>
+            <input type="text" name="buscarReceta" id="buscarReceta" class="form-control">
+            <div class="invalid-feedback" ></div>
+            <button class="btnBuscar"  type="submit">Buscar</button>
+        </div>
+        
+        
     </header>
 
     <h1>Recetas</h1>
     <section class="indexRecetas"></section>
+
+    <footer>
+        <nav class="footer">
+            <ul>
+                <li>Guadalupe Ingolotti</li>
+                <li>Thiago Marucco</li>
+            </ul>
+        </nav>
+    </footer>
+
 
     <script src="./js/index.js"></script>
 </body>
