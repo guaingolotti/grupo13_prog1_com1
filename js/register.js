@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("registroform");
     const emailField = document.getElementById("email");
     const passwordField = document.getElementById("password");
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", function(e) {
         let isValid = true;
-        // Validar el campo email
+
         if (emailField.value.trim() === "") {
             emailError.textContent = "Por favor complete el campo";
             emailError.style.display = "block";
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             emailError.style.display = "none";
         }
-        // Validar el campo contraseña
+
         if (passwordField.value.trim() === "") {
             passwordError.textContent = "Por favor complete el campo";
             passwordError.style.display = "block";
@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             passwordError.style.display = "none";
         }
-        // Si hay errores, evitar el envío del formulario
+    
         if (!isValid) {
             e.preventDefault();
             return;
         }
-        // Redirigir al formulario de login si todo está correcto
-        e.preventDefault(); // Solo para pruebas, se puede eliminar en producción
+        
+        e.preventDefault();
         window.location.href = "./login.html";
     });
 });

@@ -173,3 +173,61 @@ nav ul li{
     width: 100%;
     padding: 10px;
 }
+
+/*/ categories /*/
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+#categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.category-item {
+    padding: 20px 30px;
+    background-color: #1b05c4;
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    max-width: 200px;
+    text-align: center;
+}
+
+.category-item:hover {
+    background-color: #1b05c4;
+}
+
+#recipes-list {
+    margin-top: 30px;
+}
+
+#recipes-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#recipes-list li {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#recipes-list li img {
+    max-width: 300px; 
+    margin-top: 10px;
+}
+
+#recipes-list li .recipe-name {
+    font-size: 18px;
+    color: #1b05c4;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
