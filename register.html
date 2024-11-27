@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Document</title>
+    <title>Registro</title>
 </head>
     <body>
     <header>
@@ -23,13 +23,23 @@
     
     <section class="registro">
         <div class="reg">
-            <form>
-                <input type="email" name="mail" value="" required>
+            <form id="registroform">
+
+                <input type="email" name="mail" placeholder="Email" id="email">
+                <p class="error-message" id="emailError"></p>
+
+                <input type="password" name="password" placeholder="Contraseña" id="password">
+                <p class="error-message" id="passwordError"></p>
     
                 <div class="cajaformulario">
                     <label for="">Acepto los terminos y condiciones</label>
                     <input type="radio" name="terminos y condiciones" value="yes" required>
                 </div>
+
+                <div class="form-link">
+                    <a href="./login.html">Ya tengo cuenta</a>
+                </div>
+
                 <button type="submit">enviar </button>
             </form>
         </div>
