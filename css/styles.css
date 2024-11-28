@@ -43,6 +43,25 @@ header li{
     justify-content: space-between;
 }
 
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin-right: 20px;
+}
+
+.listaHeader a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+
 /*/ register /*/
 .registro {
     margin: 0;
@@ -67,16 +86,6 @@ form {
     gap: 15px;
     width: 100%;
 }
-input[type="email"], input[type="password"] {
-    padding: 10px;
-    margin: 5px; 
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.cajaformulario {
-    display: flex;
-    align-items: center; 
-}
 button {
     padding: 10px;
     background-color: blue;
@@ -85,42 +94,16 @@ button {
     border-radius: 5px;
     font-size: 20px;
 }
-
-nav ul{
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li{
-    margin-right: 20px;
-}
-
-.form-uno{
-    margin-top: 10px; 
-}
-
-.listaHeader a{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
-}
-
-.form-control{
-    width: 80%;
-    font-size: 20px;
+.R-form {
+    font-size: 25px;
 }
 .form-link a {
     text-decoration: none;
 }
 .error-message {
     color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
-    display: none; 
+    font-size: 15px;
 }
-
 
 
 
@@ -180,7 +163,7 @@ main {
     text-align: center;
 }
 
-#categories-list {
+#categorias-lista {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -192,36 +175,34 @@ main {
     padding: 20px 30px;
     background-color: #1b05c4;
     color: white;
-    border: 1px solid #ddd;
+    border: 1px solid white;
     border-radius: 8px;
-    cursor: pointer;
     max-width: 200px;
     text-align: center;
 }
 
-.category-item:hover {
-    background-color: #1b05c4;
-}
-
 #recipes-list {
+    display: none;
     margin-top: 30px;
 }
 
 #recipes-list ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     list-style: none;
-    padding: 0;
 }
 
 #recipes-list li {
     padding: 15px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 #recipes-list li img {
-    max-width: 300px; 
+    max-width: 300px;
     margin-top: 10px;
 }
 
@@ -229,5 +210,4 @@ main {
     font-size: 18px;
     color: #1b05c4;
     font-weight: bold;
-    margin-bottom: 10px;
 }

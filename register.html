@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <title>Registro</title>
 </head>
-    <body>
+<body>
     <header>
         <nav>
             <img src="./img/logo.jpg" alt="logo" class="logo">
@@ -23,24 +23,25 @@
     
     <section class="registro">
         <div class="reg">
-            <form id="registroform">
+            <form id="registroform" method="get" action="./login.html">
 
+                <p class="R-form">Regístrate!</p>
                 <input type="email" name="mail" placeholder="Email" id="email">
                 <p class="error-message" id="emailError"></p>
 
                 <input type="password" name="password" placeholder="Contraseña" id="password">
                 <p class="error-message" id="passwordError"></p>
     
-                <div class="cajaformulario">
-                    <label for="">Acepto los terminos y condiciones</label>
-                    <input type="radio" name="terminos y condiciones" value="yes" required>
+                <div>
+                    <label for="terminos">Acepto los términos y condiciones</label>
+                    <input type="radio" name="terminos" value="yes" id="terminos" required>
                 </div>
 
                 <div class="form-link">
                     <a href="./login.html">Ya tengo cuenta</a>
                 </div>
 
-                <button type="submit">enviar </button>
+                <button type="submit">Enviar</button>
             </form>
         </div>
     </section>
