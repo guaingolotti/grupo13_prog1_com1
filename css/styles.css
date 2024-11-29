@@ -23,6 +23,17 @@
     width: 100%;
 }
 
+.form-control{
+    width: 50%;
+    padding: 10px;
+}
+
+.btnCargarMas{
+    display: flex;
+    margin: 10px auto;
+    padding: 10px;
+}
+
 /*/ HEADER/*/
 
 .logo{
@@ -35,6 +46,7 @@ header ul{
     box-sizing: border-box;
     border: 4px solid #1b05c4;
     margin: 25px;
+    justify-content: center;
 }
 
 header li{
@@ -46,6 +58,7 @@ header li{
 nav ul{
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
@@ -124,8 +137,6 @@ button {
     color: white;
 }
 
-
-
 /*/formulario/*/
 
 .form-uno{
@@ -152,10 +163,19 @@ button {
 .login{
     display: flex;
     flex-direction: column; 
+    justify-content:center ;
     align-items: center;
-    width: 100%;
     padding: 10px;
 }
+
+.loginForm{
+    display: flex;
+    flex-direction: column; 
+    justify-content:center ;
+    align-items: center;
+    min-height: 100vh;
+}
+
 
 /*/ categories /*/
 main {
@@ -210,4 +230,82 @@ main {
     font-size: 18px;
     color: #1b05c4;
     font-weight: bold;
+}
+
+
+/*/ DETALLE /*/
+
+.imagen{
+    width: 20%;
+}
+
+.recetaFile{
+    width: 100%;
+    margin: 10px;
+}
+
+.nombreReceta{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    .indexRecetas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recetaDos{
+        width: 80%; 
+    }
+
+    .loginForm{
+        margin: 50px;
+    }
+
+    .logo{
+        width: 30%;
+    }
+
+    header ul{
+        margin: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li{
+        margin: 10px;
+    }
+
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .footer ul{
+        justify-content: center;
+    }
+
+    .nombreReceta{
+        font-size: 30px;
+    }
+
+    .imagen{
+        width: 90%;
+        margin: 5px;
+    }
+
+    .form-control{
+        width: 90%;
+    }
+
+    .btnBuscar{
+        width: 50%;
+        padding: 5px;
+    }
 }

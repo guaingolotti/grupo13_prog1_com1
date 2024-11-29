@@ -20,19 +20,20 @@
         </nav>
 
 
-        <form class="formSearch" action="search-results.html" method="get"></form>
+        <form class="formSearch" action="search-results.html" method="get">
         <div class="form-uno">
             <label for="buscarReceta"></label>
-            <input type="text" name="buscarReceta" id="buscarReceta" class="form-control" placeholder="Ingrese la receta que busca...">
+            <input type="search" name="buscarReceta" id="buscarReceta" class="form-control" placeholder="Ingrese la receta que busca...">
             <div class="invalid-feedback" ></div>
             <button class="btnBuscar"  type="submit">Buscar</button>
         </div>
-        
+    </form>
         
     </header>
 
     <h1>Recetas</h1>
     <section class="indexRecetas"></section>
+    <button class="btnCargarMas">Cargar mas</button>
 
     <footer>
         <nav class="footer">
@@ -42,7 +43,6 @@
             </ul>
         </nav>
     </footer>
-
 
     <script src="./js/index.js"></script>
 </body>

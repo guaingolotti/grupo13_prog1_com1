@@ -25,7 +25,7 @@ fetch(url)
 
         nombreReceta.innerText = data.name;
         instrucciones.innerText = data.instructions;
-        tiempo.innerText = `tiempo: ${data.prepTimeMinutes} minutos`;
+        tiempo.innerText = `Tiempo: ${data.prepTimeMinutes} minutos.`;
         imagen.src = data.image;
 
         let tagsList = '';
@@ -33,7 +33,7 @@ fetch(url)
             console.log(data.tags[i]);
             tagsList += `<a href="./category.html?id=${data.tags[i]}" class="tag-link">${data.tags[i]}</a>`;
         }
-        category.innerHTML = `ir a su categoria: ${tagsList}`;
+        category.innerHTML = `Ir a su categoria: ${tagsList}`;
     })
     .catch(function (error){
         console.log('el error es:' + error);
