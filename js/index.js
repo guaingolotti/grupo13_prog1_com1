@@ -75,10 +75,10 @@ btnBuscar.addEventListener('click', function(event){
         let campoValores = campoBuscar.value.trim();
 
         if (campoValores === ''){
-            mensajeError.textContent = 'Debes ingresar un nombre de receta';
+            mensajeError.innerText = 'Debes ingresar un nombre de receta';
             mensajeError.style.display = 'block';
         } else if (campoValores.length < 3){
-            mensajeError.textContent = 'Debe tener al menos 3 caracteres';
+            mensajeError.innerText = 'Debe tener al menos 3 caracteres';
             mensajeError.style.display = 'block';  
         } else{
             mensajeError.style.display = 'none';
