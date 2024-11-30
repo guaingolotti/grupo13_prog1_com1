@@ -2,27 +2,7 @@ let categoriesList = document.querySelector("#categorias-lista");
 let recipesList = document.querySelector("#recipes-list");
 let recipesUl = document.querySelector("#recipes");
 
-fetch('https://dummyjson.com/recipes/tags')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (tags) {
-        tags.forEach(function (tag) {
-            let categoryItem = document.createElement("div");
-            categoryItem.className = "category-item";
-            categoryItem.textContent = tag;
-            categoryItem.addEventListener("click", function () {
-                loadRecipes(tag);
-            });
-            categoriesList.appendChild(categoryItem);
-        });
-    })
-    .catch(function (error) {
-        console.log("El error es: " + error);
-    });
-
 function loadRecipes(category) {
-    recipesList.style.display = "block";
     recipesUl.innerHTML = "";
 
     fetch(`https://dummyjson.com/recipes/tag/${category}`)
@@ -30,26 +10,40 @@ function loadRecipes(category) {
             return response.json();
         })
         .then(function (data) {
-            if (data.recipes && data.recipes.length > 0) {
-                data.recipes.forEach(function (recipe) {
-                    let recipeItem = document.createElement("li");
-
-                    let recipeName = document.createElement("div");
-                    recipeName.className = "recipe-name";
-                    recipeName.textContent = recipe.name;
-
-                    let recipeImage = document.createElement("img");
-                    recipeImage.src = recipe.image;
-
-                    recipeItem.appendChild(recipeName);
-                    recipeItem.appendChild(recipeImage);
-                    recipesUl.appendChild(recipeItem);
-                });
-            } else {
-                recipesList.style.display = "none";
+            let recipesHTML = "";
+            for (let i = 0; i < data.recipes.length; i++) {
+                recipesHTML += `
+                    <li>
+                        <div class="recipe-name">${data.recipes[i].name}</div>
+                        <img src="${data.recipes[i].image}" alt="${data.recipes[i].name}">
+                    </li>`;
             }
+            recipesUl.innerHTML = recipesHTML;
         })
         .catch(function (error) {
-            console.log("El error es: " + error);
+            console.error("Error al cargar las recetas:", error);
         });
 }
+
+fetch('https://dummyjson.com/recipes/tags')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        let categoriesHTML = "";
+        for (let i = 0; i < data.length; i++) {
+            categoriesHTML += `<div class="category-item">${data[i]}</div>`;
+        }
+        categoriesList.innerHTML = categoriesHTML;
+
+        let categoryItems = document.querySelectorAll(".category-item");
+        for (let i = 0; i < categoryItems.length; i++) {
+            categoryItems[i].addEventListener("click", function () {
+                let category = categoryItems[i].innerText.trim();
+                loadRecipes(category);
+            });
+        }
+    })
+    .catch(function (error) {
+        console.error("Error al cargar las categorías:", error);
+    });

@@ -1,30 +1,28 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('registroform');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const emailError = document.getElementById('emailError');
-    const passwordError = document.getElementById('passwordError');
+let form = document.querySelector('#registroForm');
+let emailInput = document.querySelector('#email');
+let passwordInput = document.querySelector('#password');
+let emailError = document.querySelector('#emailError');
+let passwordError = document.querySelector('#passwordError');
 
-    form.addEventListener('submit', function(event) {
+    registroform.addEventListener('submit', function(event) {
         event.preventDefault();
-        
-        emailError.textContent = '';
-        passwordError.textContent = '';
 
-        var valid = true;
+        emailError.innerHTML = '';
+        passwordError.innerHTML = '';
 
-        if (!emailInput.value.trim()) {
-            emailError.textContent = 'Por favor complete el campo';
+        let valid = true;
+
+        if (emailInput.value === '') {
+            emailError.innerHTML = 'Por favor complete el campo de email.';
+            console.log('Por favor complete el campo de email.');
             valid = false;
         }
-
-        if (!passwordInput.value.trim()) {
-            passwordError.textContent = 'Por favor complete el campo';
+        if (passwordInput.value === '') {
+            passwordError.innerHTML = 'Por favor complete el campo de contraseña.';
+            console.log('Por favor complete el campo de contraseña.');
             valid = false;
         }
-
         if (valid) {
-            window.location.href = './login.html';
+            registroform.submit();
         }
     });
-});
