@@ -29,7 +29,7 @@ function cargarResultados(){
                     <h1> ${resultados[i].name}</h1>
                     <img src="${resultados[i].image}">
                     <p> dificultad: ${resultados[i].difficulty}</p>
-                    <a href="./resultados.html?id=${resultados[i].id}">Ir al detalle</a>
+                    <a href="./receta.html?id=${resultados[i].id}">Ir al detalle</a>
                 </article>`;
                 
             }
